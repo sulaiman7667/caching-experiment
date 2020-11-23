@@ -2,7 +2,6 @@
 
 |Category | Unacceptable | Threshold | Typical | Excellent |
 | --- | --- | --- | --- | --- |
-
 | Test Set 1 | Passes all tests | Test Set 1 | Code does not run or runs and passes <= 2 tests | Passes > 2 tests and fails > 2 tests | Fails <= 2 tests |
 | Test Set 2 | Passes all tests | Test Set 1 | Code does not run or runs and passes <= 2 tests | Passes > 2 tests and fails > 2 tests | Fails <= 2 tests |
 | Test Set 3 | Passes all tests | Test Set 1 | Code does not run or runs and passes <= 2 tests | Passes > 2 tests and fails > 2 tests | Fails <= 2 tests |
