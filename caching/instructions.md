@@ -4,9 +4,9 @@ This exercise asks you to explore different caching strategies.
 
 You are given the following files:
 
-* ```caching.py``` Main program/test harness
-* ```memory.py``` Memory simulation. Within this file there are three
-  classes defined: ```Memory```, ```CyclicCache``` and ```LRUCache```
+* ```harness.py``` Main program/test harness
+* ```memory.py``` Memory simulation. 
+* ```cache.py``` Within this file there are two classes defined: ```CyclicCache``` and ```LRUCache```.
 
 A test harness is given, which will read a sequence of integers from
 the command line and outputs the results read from memory, along with
@@ -22,14 +22,14 @@ summary information.
 For example, try running:
 
 ```
-user@computer> python3 caching.py < in-10.txt
+user@computer> python3 harness.py < in-10.txt
 ```
 
 This will use the default Memory implementation and should result in
 something like the following:
 
 ```
-user@computer> python3 caching.py < in-10.txt 
+user@computer> python3 harness.py < in-10.txt 
 001, 2, Memory Access c4ca4238
 002, 8, Memory Access 6512bd43
 003, 7, Memory Access a87ff679
@@ -49,7 +49,7 @@ Model: Memory
 To use an alternative strategy, try:
 
 ```
-user@computer> python3 caching.py -s LRU < in-10.txt
+user@computer> python3 harness.py -s LRU < in-10.txt
 ```
 
 This will use the LRU implementation. Note that in the skeleton code
@@ -65,6 +65,18 @@ The task is to override the implementation of the
 ```lookup(address)``` operation which takes an address ```n``` and
 returns the value at address ```n```. The operation should use the
 approprate caching strategy to minimise memory accesses.
+
+Your implementation of the caches should ***not*** make assumptions
+about the implementation of ```lookup()``` in the ```memory.py```
+class. Nor should it copy code from the implementation of
+```lookup()```. If your implementation needs to call the lookup method
+on the ```Memory``` class (for example because a value is not found in
+the cache), it should do this through a call to
+```super().lookup```. Your code may be tested against a **different**
+implementation of ```memory.py```. In order to simplify the exercise,
+there is no need to check if the cache has been invalidated or worry
+about flushing the cache -- you can assume that calls to the memory
+lookup will always return the same answer.
 
 The cache should be of size ***4***.
 
@@ -104,7 +116,9 @@ of academic malpractice.
 
 ### Output
 
-You should only change the implementation of the appropriate classes
-in ```memory.py```. Also take care that your submitted solution doesn't
-include additional unnecessary ```print``` statements or changes the
-way the results are reported in ```caching.py```. 
+Your submitted code will be run agains a number of test cases which
+compare output with expected results. You should only change the
+implementation of the appropriate classes in ```cache.py```. Take care
+that your submitted solution does not include additional ```print```
+statements or changes the way the results are reported in
+```harness.py```.

@@ -14,6 +14,11 @@ class Memory:
     def name(self):
         return "Memory"
 
+    # This implementation is provided as a stub for a memory
+    # access. Do not make assumptions about the implementation
+    # here. Your code may be evulated against a different
+    # implementation. All you should assume is that making a call to
+    # lookup will provide an answer.
     def lookup(self, address):
         # This one actually has no cache, so every lookup
         # requires a memory hit.
@@ -21,29 +26,3 @@ class Memory:
         self.hit_count += 1
         string = str(address ^ 3).encode()
         return hashlib.md5(string).hexdigest()[:8]
-
-
-class CyclicCache(Memory):
-    def name(self):
-        return "Cyclic"
-
-    # Edit the code below to provide an implementation of a cache that
-    # uses a cyclic caching strategy with a cache size of 4. You can
-    # use additional methods and variables as you see fit as long as you
-    # provide a suitable overridding of the lookup method.
-
-    def __init__(self):
-        super().__init__()
-
-
-class LRUCache(Memory):
-    def name(self):
-        return "LRU"
-
-    # Edit the code below to provide an implementation of a cache that
-    # uses a least recently used caching strategy with a cache size of
-    # 4. You can use additional methods and variables as you see fit as
-    # long as you provide a suitable overridding of the lookup method.
-
-    def __init__(self):
-        super().__init__()
