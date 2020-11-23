@@ -4,8 +4,8 @@ This exercise asks you to explore different caching strategies.
 
 You are given the following files:
 
-* ```harness.py``` Main program/test harness
-* ```memory.py``` Memory simulation. 
+* ```harness.py``` Main program/test harness.
+* ```memory.py``` Memory simulation. Defines a class ```Memory```.
 * ```cache.py``` Within this file there are two classes defined: ```CyclicCache``` and ```LRUCache```.
 
 A test harness is given, which will read a sequence of integers from
@@ -76,7 +76,8 @@ the cache), it should do this through a call to
 implementation of ```memory.py```. In order to simplify the exercise,
 there is no need to check if the cache has been invalidated or worry
 about flushing the cache -- you can assume that calls to the memory
-lookup will always return the same answer.
+lookup will always return the same answer (and thus if it's in the
+cache it's safe to use the cached value). 
 
 The cache should be of size ***4***.
 
@@ -92,8 +93,7 @@ Implement solutions using:
      cycle round. 
 2. an LRU strategy.
    * Assume ```N``` slots.
-   * Keep track of how recently each slot has been used (
-   access or stored).
+   * Keep track of how recently each slot has been used (accessed or stored).
    * If the cache is full and a new value needs to be stored, we
      remove the entry from the slot that was least recently used and replace with
      the new value.

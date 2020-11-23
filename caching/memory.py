@@ -1,9 +1,7 @@
-import queue
 import hashlib
-from random import randrange
 
+# Memory lookup
 
-# Various implementations of caching.
 class Memory:
     def __init__(self):
         self.hit_count = 0
