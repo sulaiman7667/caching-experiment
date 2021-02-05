@@ -73,7 +73,8 @@ class. Nor should it copy code from the implementation of
 on the ```Memory``` class (for example because a value is not found in
 the cache), it should do this through a call to
 ```super().lookup```. Your code may be tested against a **different**
-implementation of ```memory.py```. In order to simplify the exercise,
+implementation of ```memory.py```, so copying the code could then
+result in errors. In order to simplify the exercise,
 there is no need to check if the cache has been invalidated or worry
 about flushing the cache -- you can assume that calls to the memory
 lookup will always return the same answer (and thus if it's in the
