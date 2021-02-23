@@ -14,7 +14,7 @@ class Memory:
 
     # This implementation is provided as a stub for a memory
     # access. Do not make assumptions about the implementation
-    # here. Your code may be evulated against a different
+    # here. Your code may be evaluated against a different
     # implementation. All you should assume is that making a call to
     # lookup will provide an answer.
     def lookup(self, address):
