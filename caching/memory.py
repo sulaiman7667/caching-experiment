@@ -2,6 +2,7 @@ import hashlib
 
 # Memory lookup
 
+
 class Memory:
     def __init__(self):
         self.hit_count = 0
